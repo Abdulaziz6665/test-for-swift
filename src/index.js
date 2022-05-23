@@ -40,7 +40,7 @@ app.get('/', async (req, res) => {
 // Create our WebSocket server using the HTTP server we just set up.
 const wsServer = new WebSocketServer({
   server: httpServer,
-  path: '/graphqll',
+  path: '/graphql',
 });
 // Save the returned server's info so we can shutdown this server later
 const serverCleanup = useServer({
@@ -80,7 +80,7 @@ async function start () {
   await server.start();
   server.applyMiddleware({ app });
 
-  const PORT = process.env.PORT || 4001
+  const PORT = process.env.PORT || 4010
   // Now that our HTTP server is fully set up, we can listen to it.
   httpServer.listen(PORT, () => {
     console.log(
