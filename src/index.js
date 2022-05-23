@@ -62,8 +62,8 @@ async function start () {
     plugins: [
       // Proper shutdown for the HTTP server.
       ApolloServerPluginDrainHttpServer({ httpServer }),
-      // ApolloServerPluginInlineTrace(),
-      ApolloServerPluginLandingPageGraphQLPlayground,
+      ApolloServerPluginInlineTrace(),
+      // ApolloServerPluginLandingPageGraphQLPlayground,
       ApolloServerPluginCacheControlDisabled(),
   
       // Proper shutdown for the WebSocket server.
