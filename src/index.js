@@ -1,7 +1,7 @@
 const { ApolloServer, AuthenticationError } = require('apollo-server-express');
 const { createServer } = require('http');
 const express = require('express');
-const { ApolloServerPluginDrainHttpServer, ApolloServerPluginInlineTrace, ApolloServerPluginCacheControlDisabled } = require("apollo-server-core");
+const { ApolloServerPluginDrainHttpServer, ApolloServerPluginInlineTrace, ApolloServerPluginCacheControlDisabled, ApolloServerPluginLandingPageGraphQLPlayground } = require("apollo-server-core");
 const { makeExecutableSchema } = require('@graphql-tools/schema');
 const { WebSocketServer } = require('ws');
 const { useServer } = require('graphql-ws/lib/use/ws');
@@ -62,7 +62,8 @@ async function start () {
     plugins: [
       // Proper shutdown for the HTTP server.
       ApolloServerPluginDrainHttpServer({ httpServer }),
-      ApolloServerPluginInlineTrace(),
+      // ApolloServerPluginInlineTrace(),
+      ApolloServerPluginLandingPageGraphQLPlayground,
       ApolloServerPluginCacheControlDisabled(),
   
       // Proper shutdown for the WebSocket server.
