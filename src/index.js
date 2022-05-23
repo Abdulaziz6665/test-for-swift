@@ -40,7 +40,7 @@ app.get('/', async (req, res) => {
 // Create our WebSocket server using the HTTP server we just set up.
 const wsServer = new WebSocketServer({
   server: httpServer,
-  path: '/graphql',
+  path: '/graphqll',
 });
 // Save the returned server's info so we can shutdown this server later
 const serverCleanup = useServer({
