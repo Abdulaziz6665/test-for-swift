@@ -1,21 +1,11 @@
 const {Pool} = require('pg')
 
-const host = {
-  host: 'localhost',
-  database: '_test',
-  user: 'postgres',
-  password: '1',
-  port: 5432
-}
-const devConfig = `postgresql://${host.user}:${host.password}@${host.host}:${host.port}/${host.database}`
+const devConfig = 'postgres://mrdyvmxx:7CG9dg-_fiB1krq3Ts9TRsH8_sm9S0Oy@jelani.db.elephantsql.com/mrdyvmxx'
 // elephant db
 const proConfig = process.env.DATABASE_URL
 
-// const ssll = process.env.NODE_ENV === 'production' ? {rejectUnauthorized: false} : false
-
-
 const pool = new Pool({
-  connectionString: process.env.NODE_ENV === 'production' ? proConfig : devConfig,
+  connectionString: devConfig,
   ssl: false
 })
 

@@ -34,14 +34,14 @@ module.exports = {
                 ]
             }
 
-            fetch(SMS_SEND_URL, {
-                method: 'POST',
-                headers: {
-                    'Content-type': 'Application/json; charset=UTF-8',
-                    'Authorization': 'Basic ' + Buffer.from(USER_NAME + ":" + PASSWORD).toString('base64')
-                },
-                body: JSON.stringify(data)
-            })
+            // fetch(SMS_SEND_URL, {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-type': 'Application/json; charset=UTF-8',
+            //         'Authorization': 'Basic ' + Buffer.from(USER_NAME + ":" + PASSWORD).toString('base64')
+            //     },
+            //     body: JSON.stringify(data)
+            // })
 
             if (sendedCode) {
                 res.json({ codeSended: true, code })

@@ -58,7 +58,7 @@ async function start () {
   // Set up ApolloServer.
   const server = new ApolloServer({
     schema,
-    introspection: process.env.NODE_ENV !== 'production',
+    introspection: process.env.NODE_ENV !== 'production', 
     plugins: [
       // Proper shutdown for the HTTP server.
       ApolloServerPluginDrainHttpServer({ httpServer }),

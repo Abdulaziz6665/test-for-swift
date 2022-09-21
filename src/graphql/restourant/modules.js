@@ -1,4 +1,5 @@
 const RestorantServices = require('./test/index.js')
+const Message = require('./message/index.js')
 // const RestOrderWaiting = require('./rest-order-waiting/index.js')
 // const RestCheck = require('./rest-check/index.js')
 // const FoodTypes = require('./restorant-food-types/index.js')
@@ -10,7 +11,7 @@ const RestorantServices = require('./test/index.js')
 module.exports = {
     typeDefs: [
         RestorantServices.typeDefs,
-    //     RestOrderWaiting.typeDefs,
+        Message.typeDefs,
     //     RestCheck.typeDefs,
     //     FoodTypes.typeDefs,
     //     Foods.typeDefs,
@@ -19,7 +20,7 @@ module.exports = {
     ],
     resolvers: [
         RestorantServices.resolvers,
-    //     RestOrderWaiting.resolvers,
+        Message.resolvers,
     //     RestCheck.resolvers,
     //     FoodTypes.resolvers,
     //     Foods.resolvers,
