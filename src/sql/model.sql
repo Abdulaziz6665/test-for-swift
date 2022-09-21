@@ -9,7 +9,7 @@ create table users(
 create table messages(
     id serial primary key,
     message text not null,
-    user_id integer not null references users(id)
+    user_id integer not null references users(id) on delete cascade
 );
 
 create table foods(
@@ -18,3 +18,8 @@ create table foods(
     price int not null,
     img varchar(255)
 );
+
+
+truncate users cascade;
+truncate messages;
+truncate foods;
