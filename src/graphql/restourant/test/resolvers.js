@@ -20,6 +20,14 @@ module.exports.resolvers = {
         console.log(error);
         return error
       }
+    },
+    deleteFoodByID: async (_, {id}) => {
+      try {
+        const deleted = await model.deleteFoodByID(id)
+        return deleted
+      } catch (error) {
+        return error
+      }
     }
   },
   Subscription: {

@@ -45,6 +45,22 @@ module.exports.resolvers = {
         return error
       }
     },
+    deleteMessageById: async (_, {id}) => {
+      try {
+        const deleted = await model.deleteMessageById(id)
+        return deleted
+      } catch (error) {
+        return error
+      }
+    },
+    deleteUserByID: async (_, {id}) => {
+      try {
+        const deleted = await model.deleteUserByID(id)
+        return deleted
+      } catch (error) {
+        return error
+      }
+    },
   },
   Subscription: {
     newMessage: {

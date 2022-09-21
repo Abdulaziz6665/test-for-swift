@@ -21,7 +21,9 @@ module.exports.typeDefs = gql`
   extend type Mutation {
     signUp(userName: String!, password: String!): User!
     login(userName: String!, password: String!): User!
+    deleteUserByID(id: Int!): User!
     writeMessage(message: String! userID: Int!): String!
+    deleteMessageById(id: Int!): Message!
   }
 
   type Subscription {

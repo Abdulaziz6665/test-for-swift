@@ -15,6 +15,7 @@ module.exports.typeDefs = gql`
 
   type Mutation {
     addFood(name: String!, price: Int!): Foods!
+    deleteFoodByID(id: ID!): Foods!
   }
 
   type Subscription {

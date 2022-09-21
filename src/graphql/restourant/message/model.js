@@ -41,6 +41,16 @@ const DEVICE_IDS = `
     group by name
 `
 
+const delete_message_by_id = `
+    delete from messages where id = $1 returning *
+`
+
+const delete_user_by_id = `
+    delete from users where id = $1 returning *
+`
+
+const deleteMessageById = (id) => fetch(delete_message_by_id, id)
+const deleteUserByID = (id) => fetch(delete_user_by_id, id)
 const deviceIDs = (userID) => fetch(DEVICE_IDS, userID)
 const messages = () => fetchAll(MESSAGES);
 const signUp = (name, password) => fetch(ADD_USER, name, password)
@@ -54,5 +64,7 @@ module.exports = {
     login,
     createMessage,
     messageByID,
-    deviceIDs
+    deviceIDs,
+    deleteMessageById,
+    deleteUserByID,
 }
